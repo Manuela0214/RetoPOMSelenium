@@ -1,5 +1,6 @@
 package pageFactory;
 
+import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,6 +20,7 @@ public class ProductCarPage extends Base {
 
     @FindBy(how = How.XPATH, using = "//a[@href='/products']")
     private WebElement productsBtn;
+    @Getter
     @FindBy(how = How.XPATH, using = "//h2[@class='title text-center']")
     private WebElement titleSection;
     @FindBy(how = How.XPATH, using = "//div[@class='features_items']/div[2]")
@@ -33,20 +35,28 @@ public class ProductCarPage extends Base {
     private WebElement addToCartBtnSecondItem;
     @FindBy(how = How.XPATH, using = "//div[@class='modal-body']//a[@href='/view_cart']")
     private WebElement viewCartBtnModal;
+    @Getter
     @FindBy(how = How.XPATH, using = "//tr[@id='product-1']//h4/a[contains(text(), 'Blue Top')]")
     private WebElement firstItemCar;
+    @Getter
     @FindBy(how = How.XPATH, using = "//tr[@id='product-2']//h4/a[contains(text(), 'Men Tshirt')]")
     private WebElement secondItemCar;
+    @Getter
     @FindBy(how = How.XPATH, using = "//tr[@id='product-1']/td[@class='cart_price']/p")
     private WebElement priceFirstItem;
+    @Getter
     @FindBy(how = How.XPATH, using = "//tr[@id='product-2']/td[@class='cart_price']/p")
     private WebElement priceSecondItem;
+    @Getter
     @FindBy(how = How.XPATH, using = "//tr[@id='product-1']/td[@class='cart_quantity']/button")
     private WebElement quantityFirstItem;
+    @Getter
     @FindBy(how = How.XPATH, using = "//tr[@id='product-1']/td[@class='cart_quantity']/button")
     private WebElement quantitySecondItem;
+    @Getter
     @FindBy(how = How.XPATH, using = "//tr[@id='product-1']/td[@class='cart_total']/p")
     private WebElement totalFirstProduct;
+    @Getter
     @FindBy(how = How.XPATH, using = "//tr[@id='product-2']/td[@class='cart_total']/p")
     private WebElement totalSecondProduct;
 
@@ -73,39 +83,4 @@ public class ProductCarPage extends Base {
         click(viewCartBtnModal);
     }
 
-    public WebElement getTitleSection() {
-        return titleSection;
-    }
-
-    public WebElement getFirstItemCar() {
-        return firstItemCar;
-    }
-
-    public WebElement getSecondItemCar() {
-        return secondItemCar;
-    }
-
-    public WebElement getPriceFirstItem() {
-        return priceFirstItem;
-    }
-
-    public WebElement getPriceSecondItem() {
-        return priceSecondItem;
-    }
-
-    public WebElement getQuantityFirstItem() {
-        return quantityFirstItem;
-    }
-
-    public WebElement getQuantitySecondItem() {
-        return quantitySecondItem;
-    }
-
-    public WebElement getTotalFirstProduct() {
-        return totalFirstProduct;
-    }
-
-    public WebElement getTotalSecondProduct() {
-        return totalSecondProduct;
-    }
 }

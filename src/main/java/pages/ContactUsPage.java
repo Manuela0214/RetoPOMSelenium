@@ -1,5 +1,6 @@
 package pages;
 
+import lombok.Getter;
 import org.openqa.selenium.*;
 import java.util.logging.Logger;
 
@@ -11,8 +12,10 @@ public class ContactUsPage extends Base{
         super(driver);
     }
 
+    @Getter
     By titleSection = org.openqa.selenium.By.xpath("//h2[@class='title text-center']");
     By contactButton = By.xpath("//a[@href='/contact_us']");
+    @Getter
     By getInTouchTitle = By.xpath("//h2[@class='title text-center' and contains(., 'Get In Touch')]");
     By inputName = By.xpath("//input[@name='name']");
     By inputEmail = By.xpath("//input[@name='email']");
@@ -20,6 +23,7 @@ public class ContactUsPage extends Base{
     By inputMessage = By.xpath("//textarea[@name='message']");
     By uploadFile = By.xpath("//input[@name='upload_file']");
     By submitBtn = By.xpath("//input[@name='submit']");
+    @Getter
     By successMessage = By.xpath("//div[@class='status alert alert-success']");
     By homeBtn = By.xpath("//a[@class='btn btn-success']");
 
@@ -56,15 +60,4 @@ public class ContactUsPage extends Base{
         click(homeBtn);
     }
 
-    public By getSuccessMessage() {
-        return successMessage;
-    }
-
-    public By getTitleSection() {
-        return titleSection;
-    }
-
-    public By getGetInTouchTitle() {
-        return getInTouchTitle;
-    }
 }

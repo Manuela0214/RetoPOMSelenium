@@ -1,5 +1,6 @@
 package pageFactory;
 
+import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,6 +21,7 @@ public class SearchProductPage extends Base {
 
     @FindBy(how = How.XPATH, using = "//a[@href='/products']")
     private WebElement productsBtn;
+    @Getter
     @FindBy(how = How.XPATH, using = "//h2[@class='title text-center']")
     private WebElement titleSection;
     @FindBy(how = How.XPATH, using = "//input[@id='search_product']")
@@ -62,7 +64,4 @@ public class SearchProductPage extends Base {
         return true;
     }
 
-    public WebElement getTitleSection() {
-        return titleSection;
-    }
 }

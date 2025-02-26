@@ -1,5 +1,6 @@
 package pageFactory;
 
+import lombok.Getter;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,10 +19,12 @@ public class ContactUsPage extends Base {
         PageFactory.initElements(driver, this);
     }
 
+    @Getter
     @FindBy(how = How.XPATH, using = "//h2[@class='title text-center']")
     private WebElement titleSection;
     @FindBy(how = How.XPATH, using = "//a[@href='/contact_us']")
     private WebElement contactButton;
+    @Getter
     @FindBy(how = How.XPATH, using = "//h2[@class='title text-center' and contains(., 'Get In Touch')]")
     private WebElement getInTouchTitle;
     @FindBy(how = How.XPATH, using = "//input[@name='name']")
@@ -36,6 +39,7 @@ public class ContactUsPage extends Base {
     private WebElement uploadFile;
     @FindBy(how = How.XPATH, using = "//input[@name='submit']")
     private WebElement submitBtn;
+    @Getter
     @FindBy(how = How.XPATH, using = "//div[@class='status alert alert-success']")
     private WebElement successMessage;
     @FindBy(how = How.XPATH, using = "//a[@class='btn btn-success']")
@@ -74,15 +78,4 @@ public class ContactUsPage extends Base {
         click(homeBtn);
     }
 
-    public WebElement getSuccessMessage() {
-        return successMessage;
-    }
-
-    public WebElement getTitleSection() {
-        return titleSection;
-    }
-
-    public WebElement getGetInTouchTitle() {
-        return getInTouchTitle;
-    }
 }

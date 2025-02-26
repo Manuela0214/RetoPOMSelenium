@@ -1,5 +1,6 @@
 package pages;
 
+import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +18,7 @@ public class SearchProductPage extends Base{
     }
 
     By productsBtn = By.xpath("//a[@href='/products']");
+    @Getter
     By titleSection = By.xpath("//h2[@class='title text-center']");
     By searchBox = By.xpath("//input[@id='search_product']");
     By searchBtn = By.xpath("//button[@id='submit_search']");
@@ -55,7 +57,4 @@ public class SearchProductPage extends Base{
         return true;
     }
 
-    public By getTitleSection() {
-        return titleSection;
-    }
 }
